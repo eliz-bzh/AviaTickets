@@ -13,7 +13,7 @@ namespace AviaTickets
         public string PassengerName { get; set; }
         public DateTime DepartureDate { get; set; }
 
-        public TicketRequest() { }
+        public TicketRequest() {}
 
         public TicketRequest(string destination, string flightNumber, string passengerName, DateTime departureDate)
         {
@@ -34,7 +34,10 @@ namespace AviaTickets
     {
         public List<TicketRequest> requests { get; set; }
 
-        public TicketManager() {}
+        public TicketManager()
+        {
+            requests = new List<TicketRequest>();
+        }
         public TicketManager(List<TicketRequest> requests)
         {
             this.requests = requests;

@@ -42,6 +42,12 @@ namespace AviaTickets
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonGetAll = new System.Windows.Forms.Button();
+            this.dataGridViewRequests = new System.Windows.Forms.DataGridView();
+            this.ColumnDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFlightNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPassengerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDepartureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxRequests
@@ -50,7 +56,7 @@ namespace AviaTickets
             this.listBoxRequests.ItemHeight = 16;
             this.listBoxRequests.Location = new System.Drawing.Point(21, 136);
             this.listBoxRequests.Name = "listBoxRequests";
-            this.listBoxRequests.Size = new System.Drawing.Size(761, 292);
+            this.listBoxRequests.Size = new System.Drawing.Size(190, 132);
             this.listBoxRequests.TabIndex = 20;
             // 
             // dateTimeDepartureDate
@@ -157,11 +163,57 @@ namespace AviaTickets
             this.buttonGetAll.UseVisualStyleBackColor = true;
             this.buttonGetAll.Click += new System.EventHandler(this.buttonGetAll_Click);
             // 
+            // dataGridViewRequests
+            // 
+            this.dataGridViewRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnDestination,
+            this.ColumnFlightNumber,
+            this.ColumnPassengerName,
+            this.ColumnDepartureDate});
+            this.dataGridViewRequests.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dataGridViewRequests.Location = new System.Drawing.Point(71, 166);
+            this.dataGridViewRequests.Name = "dataGridViewRequests";
+            this.dataGridViewRequests.RowHeadersWidth = 51;
+            this.dataGridViewRequests.RowTemplate.Height = 24;
+            this.dataGridViewRequests.RowTemplate.ReadOnly = true;
+            this.dataGridViewRequests.Size = new System.Drawing.Size(712, 263);
+            this.dataGridViewRequests.TabIndex = 24;
+            // 
+            // ColumnDestination
+            // 
+            this.ColumnDestination.HeaderText = "Destination";
+            this.ColumnDestination.MinimumWidth = 6;
+            this.ColumnDestination.Name = "ColumnDestination";
+            this.ColumnDestination.Width = 125;
+            // 
+            // ColumnFlightNumber
+            // 
+            this.ColumnFlightNumber.HeaderText = "Flight number";
+            this.ColumnFlightNumber.MinimumWidth = 6;
+            this.ColumnFlightNumber.Name = "ColumnFlightNumber";
+            this.ColumnFlightNumber.Width = 125;
+            // 
+            // ColumnPassengerName
+            // 
+            this.ColumnPassengerName.HeaderText = "Passenger name";
+            this.ColumnPassengerName.MinimumWidth = 6;
+            this.ColumnPassengerName.Name = "ColumnPassengerName";
+            this.ColumnPassengerName.Width = 125;
+            // 
+            // ColumnDepartureDate
+            // 
+            this.ColumnDepartureDate.HeaderText = "Departure date";
+            this.ColumnDepartureDate.MinimumWidth = 6;
+            this.ColumnDepartureDate.Name = "ColumnDepartureDate";
+            this.ColumnDepartureDate.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridViewRequests);
             this.Controls.Add(this.buttonGetAll);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonDelete);
@@ -177,6 +229,7 @@ namespace AviaTickets
             this.Controls.Add(this.buttonAdd);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +250,10 @@ namespace AviaTickets
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonGetAll;
+        private System.Windows.Forms.DataGridView dataGridViewRequests;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFlightNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPassengerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDepartureDate;
     }
 }

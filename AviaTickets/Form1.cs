@@ -21,11 +21,11 @@ namespace AviaTickets
 
         private void updateList()
         {
-            listBoxRequests.Items.Clear();
+            dataGridViewRequests.Rows.Clear();
             List<TicketRequest> requests = ticketManager.GetAll();
             foreach(TicketRequest request in requests)
             {
-                listBoxRequests.Items.Add(request);
+                dataGridViewRequests.Rows.Add(request.Destination, request.FlightNumber, request.PassengerName, request.DepartureDate.Date);
             }
         }
 
@@ -39,10 +39,10 @@ namespace AviaTickets
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            TicketRequest selectedRequest = (TicketRequest)listBoxRequests.SelectedItem;
+            var selectedRequest = dataGridViewRequests.CurrentRow;
             if (selectedRequest != null)
             {
-                if(ticketManager.Delete(selectedRequest.FlightNumber, selectedRequest.DepartureDate))
+                if(ticketManager.Delete(selectedRequest.Cells[1].Value.ToString(), (DateTime)selectedRequest.Cells[3].Value))
                 {
                     updateList();
                     MessageBox.Show("Заявка успешно удалена.");
@@ -60,11 +60,11 @@ namespace AviaTickets
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            listBoxRequests.Items.Clear();
+            dataGridViewRequests.Rows.Clear();
             List<TicketRequest> requests = ticketManager.GetRequestsByFlightAndDate(textFlightNumber.Text, dateTimeDepartureDate.Value);
             foreach (TicketRequest request in requests)
             {
-                listBoxRequests.Items.Add(request);
+                dataGridViewRequests.Rows.Add(request.Destination, request.FlightNumber, request.PassengerName, request.DepartureDate.Date);
             }
         }
 

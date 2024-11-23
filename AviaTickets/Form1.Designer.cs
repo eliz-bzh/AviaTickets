@@ -29,7 +29,6 @@ namespace AviaTickets
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxRequests = new System.Windows.Forms.ListBox();
             this.dateTimeDepartureDate = new System.Windows.Forms.DateTimePicker();
             this.DepartureDate = new System.Windows.Forms.Label();
             this.textPassengerName = new System.Windows.Forms.TextBox();
@@ -49,15 +48,6 @@ namespace AviaTickets
             this.ColumnDepartureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBoxRequests
-            // 
-            this.listBoxRequests.FormattingEnabled = true;
-            this.listBoxRequests.ItemHeight = 16;
-            this.listBoxRequests.Location = new System.Drawing.Point(21, 136);
-            this.listBoxRequests.Name = "listBoxRequests";
-            this.listBoxRequests.Size = new System.Drawing.Size(190, 132);
-            this.listBoxRequests.TabIndex = 20;
             // 
             // dateTimeDepartureDate
             // 
@@ -172,12 +162,12 @@ namespace AviaTickets
             this.ColumnPassengerName,
             this.ColumnDepartureDate});
             this.dataGridViewRequests.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.dataGridViewRequests.Location = new System.Drawing.Point(71, 166);
+            this.dataGridViewRequests.Location = new System.Drawing.Point(17, 136);
             this.dataGridViewRequests.Name = "dataGridViewRequests";
             this.dataGridViewRequests.RowHeadersWidth = 51;
             this.dataGridViewRequests.RowTemplate.Height = 24;
             this.dataGridViewRequests.RowTemplate.ReadOnly = true;
-            this.dataGridViewRequests.Size = new System.Drawing.Size(712, 263);
+            this.dataGridViewRequests.Size = new System.Drawing.Size(766, 293);
             this.dataGridViewRequests.TabIndex = 24;
             // 
             // ColumnDestination
@@ -217,7 +207,6 @@ namespace AviaTickets
             this.Controls.Add(this.buttonGetAll);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.listBoxRequests);
             this.Controls.Add(this.dateTimeDepartureDate);
             this.Controls.Add(this.DepartureDate);
             this.Controls.Add(this.textPassengerName);
@@ -236,8 +225,6 @@ namespace AviaTickets
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxRequests;
         private System.Windows.Forms.DateTimePicker dateTimeDepartureDate;
         private System.Windows.Forms.Label DepartureDate;
         private System.Windows.Forms.TextBox textPassengerName;
